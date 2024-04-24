@@ -9,13 +9,12 @@ import MainFooter from "../partials/MainFooter";
 const Home = () => {
   return (
     <div>
-      <PullingPage />
-      <div className="voting">
+      {/* <div className="voting">
         <h1>🗓️Start Voting</h1>
-      </div>
+      </div> */}
       <StartVoting />
       <ElectionPage />
-      <StartVoting />
+      <PullingPage />
       <ScrollImageSect />
       <MainFooter />
     </div>

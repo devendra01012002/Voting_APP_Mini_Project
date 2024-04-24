@@ -1,31 +1,5 @@
-.pull_section {
-    height: 25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url("https://www.parliament.vic.gov.au/49fb58/contentassets/d75d80c267094705be9668c0c7637bc5/vec_election-day_-_db_6765.jpg?width=800&height=600&mode=crop");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.pull_section img{
+    width: 100%;
+    height: 90vh;
 }
 
-.pull_content_section h1 {
-    font-size: 4rem;
-    margin-bottom: 3rem;
-}
-
-.pull_content_section p {
-    font-weight: bold;
-    font-size: 1rem;
-    color: rgb(9, 60, 104);
-    margin-bottom: 2rem;
-}
-
-.pull_content_section button {
-    font-weight: bold;
-    font-size: 1.5rem;
-    border-radius: 2rem;
-    padding: .5rem 0.9rem;
-
-}

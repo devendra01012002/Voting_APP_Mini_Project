@@ -1,5 +1,47 @@
 .voting_section {
-    background-color: #bbb;
-    height: 25rem;
-    margin-bottom: 2rem;
+    background-image: url("https://t3.ftcdn.net/jpg/03/64/00/00/360_F_364000088_a1foUBloqILqaP3nI6A64q8ge4f1CxEc.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   display: flex;
+   padding: 40px 0px;
+   flex-wrap: wrap;
 }
+
+
+.voting_online{
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.voting_online h1{
+  font-size: 5rem;
+color: #1C1678;
+  margin-bottom: 2rem;
+  background-color: b;
+}
+
+.voting_online p{
+   /* line-height: 22px; */
+   font-size: 28px;
+   color: #1C1678;
+   font-weight: 600;
+    /* opacity: 0.6; */
+   margin-bottom: 2rem;
+}
+
+.voting_online button{
+    padding: 5px 10px;
+    font-size: 24px;
+    background-color:#5BBCFF;
+    border-radius: 20px;
+    background-color: #1C1678;
+    opacity: 0.8;
+    color: #fff;
+
+}
+
+
+

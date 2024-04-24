@@ -4,14 +4,10 @@ import "./PullingPage.css";
 const PullingPage = () => {
   return (
     <div className="pull_section">
-      <div className="pull_content_section">
-        <h1>Vote Without Rigging</h1>
-        <p>
-          A beauty pageantry is a competition that has traditionally focused on
-          judding and randking the physical...
-        </p>
-        <button type="submit">Create poll</button>
-      </div>
+      <img
+        src="https://www.shutterstock.com/shutterstock/photos/2116616324/display_1500/stock-vector-happy-national-voters-day-illustration-of-showing-voting-finger-with-electronic-voting-machine-2116616324.jpg"
+        alt=""
+      />
     </div>
   );
 };

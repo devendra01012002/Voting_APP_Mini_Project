@@ -8,7 +8,7 @@ const LoginPage = () => {
 
   let AddarCardRef = useRef();
   let passwordRef = useRef();
-
+  console.log(AddarCardRef);
   const SubmitHandler = async (e) => {
       e.preventDefault();
       try {

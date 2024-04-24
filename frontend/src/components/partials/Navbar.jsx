@@ -14,10 +14,9 @@ const Navbar = () => {
   },[])
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg bg-info">
+      <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid px-5">
-          <NavLink className="navbar-brand fs-3 fw-bolder text-success" to="#">
-            
+          <NavLink className="navbar-brand fs-3 fw-bolder text-info" to="#">
             VotingApp
           </NavLink>
           <button
@@ -32,8 +31,8 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav fw-semibold fs-5 me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <ul className="navbar-nav  fw-semibold fs-5 me-auto mb-2 mb-lg-0">
+              <li className="nav-item ">
                 <NavLink
                   className="nav-link active "
                   aria-current="page"
@@ -49,7 +48,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active"
+                  className="nav-link active "
                   to="/candidate/votecount"
                   aria-disabled="true"
                 >
@@ -63,7 +62,7 @@ const Navbar = () => {
                   <React.Fragment>
                     <li className="nav-item">
                       <NavLink
-                        className="nav-link active"
+                        className="nav-link active "
                         aria-current="page"
                         to="/user/signup"
                       >
@@ -74,7 +73,7 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <NavLink
-                        className="nav-link active"
+                        className="nav-link active "
                         aria-current="page"
                         to="/user/login"
                       >
@@ -86,7 +85,7 @@ const Navbar = () => {
                 ) : (
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active "
                       aria-current="page"
                       to="/user/logout"
                     >

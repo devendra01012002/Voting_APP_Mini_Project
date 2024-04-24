@@ -1,44 +1,37 @@
-.Election {
-    width: 40rem;
-    margin: 1rem auto;
-    text-align: center;
+.Rules{
+    /* background-color: #16aba6; */
+    /* background-image: url("https://knowledge.wharton.upenn.edu/wp-content/uploads/2016/08/voter-app-600x440.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    padding: 20px;
+}
+.Rule_sec{
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    margin: 30px auto;
+    border-radius: 20px;
+    padding: 10px;
 }
 
-.Election h1 {
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-
-.Election p {
-    text-transform: capitalize;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* font-size: 1.2rem; */
-    line-height: 1.7rem;
-    margin-bottom: 1.5rem;
-}
-
-.Election_date {
-    margin-bottom: 1.5rem;
-}
-
-.Election_date span {
-    border: 1px solid black;
-    padding: .3rem .8rem;
-    border-radius: 1rem;
-    background-color: aquamarine;
-}
-
-.contestent button {
-    margin: 1rem .5rem;
-    text-transform: capitalize;
-    background-color: cadetblue;
-    border-radius: 1rem;
-    color: aliceblue;
-    margin-bottom: 1.5rem;
-}
-
-.go_to_contest button {
-    border-radius: 1rem;
-    padding: .3rem .8rem;
+.Rule_sec h2{
+    color: rgb(74, 229, 229);
     font-weight: bolder;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ol li{margin: 20px 0px;
+}
+
+ol li h4{
+    font-family: 'Times New Roman', Times, serif;
+    color: #1679AB;
+    text-decoration: underline;
+}
+
+ol li span{
+    font-size: 24px;
 }
