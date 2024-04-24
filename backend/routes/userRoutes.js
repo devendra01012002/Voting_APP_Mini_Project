@@ -135,5 +135,14 @@ router.put("/profile/password", jwtAuthMiddleware, async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+router.post('/logout', async (req, res) => {
+    console.log("logout route")
+     try {
+      res.status(200).json({ msg: null });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  })
 
 module.exports = router;

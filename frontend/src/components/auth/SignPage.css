@@ -1,0 +1,16 @@
+.signup_sect{
+    margin-top: 0px;
+    padding: 30px 0px;
+    
+    background-image: url("https://media.istockphoto.com/id/1148772178/photo/indian-voter-hand-with-voting-sign-after-casting-vote-in-election.jpg?s=2048x2048&w=is&k=20&c=vdbJiFGAXnwJhRi5CG-K-969USMQCbwA6LzqYQcyYnQ=");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.inner-main{
+    padding: 5px;
+    background-color:  #ffffffba;
+    border-radius: 20px;
+    /* opacity: 0.8; */
+    font-weight: bold;
+}
