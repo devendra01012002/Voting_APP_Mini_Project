@@ -1,0 +1,10 @@
+.voting {
+    margin: 1rem;
+    text-align: center;
+}
+
+.voting h1 {
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

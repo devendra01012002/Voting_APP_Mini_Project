@@ -1,0 +1,13 @@
+.scrollbar {
+    display: flex;
+    overflow-y: scroll;
+
+}
+
+.image_section {
+    margin: 2rem;
+}
+
+.image_section img {
+    width: 18rem;
+}
