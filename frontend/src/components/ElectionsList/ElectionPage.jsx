@@ -4,6 +4,7 @@ const ElectionPage = () => {
     <div className="Rules">
       <div className="Rule_sec">
         <h2>Voting Rules In India</h2>
+        
         <ol>
           <li>
             <h4>Model Code of Conduct (MCC): </h4>

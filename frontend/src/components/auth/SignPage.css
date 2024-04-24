@@ -9,8 +9,8 @@
 }
 .inner-main{
     padding: 5px;
-    background-color:  #ffffffba;
+    background-color:  #fff;
     border-radius: 20px;
-    /* opacity: 0.8; */
+    opacity:1;
     font-weight: bold;
 }

@@ -1,27 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { CgLogIn } from "react-icons/cg";
-import axios from "axios";
 import { MdOutlineLogout } from "react-icons/md";
 // import { GiClick } from "react-icons/gi";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
-  const navigate=useNavigate();
   useEffect(() => {
     console.log(localStorage.getItem("mes"));
    setUser(localStorage.getItem("mes"));
   },[])
-  const handleClick =async ()=>{
-    //  const res=await axios.post('http://localhost:8080/user/logout');
-    // //  console.log(res)
-    //  console.log(res.data);
-    //  setUser(res.data)
-    // //  navigate('/user/login');
-    console.log("logged out");
-    localStorage.removeItem("mes");
-  }
+  
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -97,7 +87,7 @@ const Navbar = () => {
                     <NavLink
                       className="nav-link active "
                       aria-current="page"
-                      onClick={handleClick}
+          
                     >
                       Logout
                       <MdOutlineLogout />
