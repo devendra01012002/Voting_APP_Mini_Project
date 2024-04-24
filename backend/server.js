@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require('cors');
 
 const userRoutes = require("./routes/userRoutes");
 const candidateRoutes = require("./routes/candidateRoutes");
@@ -17,6 +18,8 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // req.body
 const PORT = 8080;
+
+app.use(cors({ origin: ["http://localhost:5173"] }));
 
 // Import the router files
 
