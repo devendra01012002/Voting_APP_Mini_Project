@@ -7,13 +7,13 @@ const { jwtAuthMiddleware, generateToken } = require("./../jwt");
 router.post("/signup", async (req, res) => {
   try {
     const data = req.body; // Assuming the request body contains the User data
-
+    
     // Check if there is already an admin user
     const adminUser = await User.findOne({ role: "admin" });
     if (data.role === "admin" && adminUser) {
       return res.status(400).json({ error: "Admin user already exists" });
     }
-
+    console.log(data)
     // Validate Aadhar Card Number must have exactly 12 digit
     if (!/^\d{12}$/.test(data.aadharCardNumber)) {
       return res
@@ -135,5 +135,14 @@ router.put("/profile/password", jwtAuthMiddleware, async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+router.post('/logout', async (req, res) => {
+    console.log("logout route")
+     try {
+      res.status(200).json({ msg: null });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  })
 
 module.exports = router;
