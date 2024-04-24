@@ -7,7 +7,7 @@ const userRoutes = require("./routes/userRoutes");
 const candidateRoutes = require("./routes/candidateRoutes");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/VotingApp")
+  .connect("mongodb://127.0.0.1:27017/Voting--App")
   .then(() => {
     console.log("Database connection established!");
   })
