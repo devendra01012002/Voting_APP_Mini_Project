@@ -1,0 +1,44 @@
+.Election {
+    width: 40rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.Election h1 {
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.Election p {
+    text-transform: capitalize;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-size: 1.2rem; */
+    line-height: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.Election_date {
+    margin-bottom: 1.5rem;
+}
+
+.Election_date span {
+    border: 1px solid black;
+    padding: .3rem .8rem;
+    border-radius: 1rem;
+    background-color: aquamarine;
+}
+
+.contestent button {
+    margin: 1rem .5rem;
+    text-transform: capitalize;
+    background-color: cadetblue;
+    border-radius: 1rem;
+    color: aliceblue;
+    margin-bottom: 1.5rem;
+}
+
+.go_to_contest button {
+    border-radius: 1rem;
+    padding: .3rem .8rem;
+    font-weight: bolder;
+}

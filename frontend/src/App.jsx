@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from './components/HomePage/HomePage'
-// import SignUpPage from './components/auth/SignUpPage'
-import SignUp2 from './components/auth/SignUp2'
+
+import SignUpPage from './components/auth/SignUpPage'
 import LoginPage from './components/auth/LoginPage'
 import Navbar from './components/partials/Navbar'
+import Home from './components/Home/Home'
 
 
 const App = () => {
@@ -12,10 +12,9 @@ const App = () => {
     <React.Fragment>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/user/">
-          {/* <Route path="signup" element={<SignUpPage/>} /> */}
-          <Route path="signup" element={<SignUp2/>} />
+          <Route path="signup" element={<SignUpPage/>} />
           <Route path="login" element={<LoginPage />} />
         </Route>
       </Routes>
