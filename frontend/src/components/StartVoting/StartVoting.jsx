@@ -9,7 +9,7 @@ const StartVoting = () => {
         <p >
         A vote is like a rifle: its usefulness depends upon the character of the user.
         </p>
-        <button >Get Started</button>
+        <button >Get Started </button>
       </div>
     </div>
   );
