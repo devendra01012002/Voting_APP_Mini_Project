@@ -8,12 +8,9 @@ const StartVoting = () => {
       <div className="voting_online">
         <h1 className="text-info">Online VOTE</h1>
         <p >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias
-          impedit, consectetur mollitia aspernatur aliquid repellat quas
-          pariatur provident officia aliquam ducimus deserunt? Iste voluptatem
-          reiciendis perferendis ea minus. Rerum, facilis!
+        A vote is like a rifle: its usefulness depends upon the character of the user.
         </p>
-        <button >Get Started</button>
+        <button >Get Started </button>
       </div>
     </div>
   );
