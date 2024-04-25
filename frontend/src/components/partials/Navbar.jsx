@@ -49,7 +49,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink
                   className="nav-link active "
-                  to="/candidate/votecount"
+                  to="/candidate/result"
                   aria-disabled="true"
                 >
                   Result
