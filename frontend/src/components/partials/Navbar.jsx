@@ -7,10 +7,10 @@ import { MdOutlineLogout } from "react-icons/md";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
-  useEffect(() => {
-    console.log(localStorage.getItem("mes"));
-   setUser(localStorage.getItem("mes"));
-  },[])
+  // useEffect(() => {
+  //   console.log(localStorage.getItem("mes"));
+  //  setUser(localStorage.getItem("mes"));
+  // },[])
   
   return (
     <React.Fragment>
