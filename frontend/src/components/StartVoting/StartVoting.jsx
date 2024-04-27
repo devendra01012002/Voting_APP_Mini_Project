@@ -2,6 +2,7 @@
 import "./StartVoting.css";
 
 const StartVoting = () => {
+  
   return (
     <div className="voting_section">
       <div className="voting_online">
