@@ -42,10 +42,10 @@ const Navbar = () => {
   
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg text-light" style={{ backgroundColor: "#a70529" }}>
         <div className="container-fluid px-5">
           <NavLink className="navbar-brand fs-3 fw-bolder text-info" to="#">
-            VotingApp
+            E-Chunav
           </NavLink>
           <button
             className="navbar-toggler"
@@ -62,7 +62,7 @@ const Navbar = () => {
             <ul className="navbar-nav  fw-semibold fs-5 me-auto mb-2 mb-lg-0">
               <li className="nav-item ">
                 <NavLink
-                  className="nav-link active "
+                  className="nav-link active text-light"
                   aria-current="page"
                   to="/"
                 >
@@ -70,13 +70,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link active" to="/candidate">
+                <NavLink className="nav-link active text-light" to="/candidate">
                   Candidate
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active "
+                  className="nav-link active text-light"
                   to="/candidate/AddCandidate"
                   aria-disabled="true"
                 >
@@ -85,7 +85,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active "
+                  className="nav-link active text-light"
                   to="/candidate/result"
                   aria-disabled="true"
                 >
@@ -99,7 +99,7 @@ const Navbar = () => {
                   <React.Fragment>
                     <li className="nav-item">
                       <NavLink
-                        className="nav-link active "
+                        className="nav-link active text-light"
                         aria-current="page"
                         to="/user/signup"
                       >
@@ -110,7 +110,7 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <NavLink
-                        className="nav-link active "
+                        className="nav-link active text-light"
                         aria-current="page"
                         to="/user/login"
                       >
@@ -123,7 +123,7 @@ const Navbar = () => {
                   <li className="nav-item">
                     <NavLink
                       onClick={LogoutUser}
-                      className="nav-link active "
+                      className="nav-link active text-light"
                       aria-current="page"
                     >
                       Logout

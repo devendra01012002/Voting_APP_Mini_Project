@@ -29,7 +29,7 @@ function ResultCard() {
     <>
     <div className="main-title">
     <h1>
-    Adjourned Poll Election to Assembly Constituency: Trends & Results Jan 2024
+    Adjourned Poll Election to Assembly Constituency: <span>Trends & Results Jan 2024</span>
     </h1>
     </div>
     <div className='main-card'>
