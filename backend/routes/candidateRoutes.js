@@ -141,7 +141,8 @@ router.get("/result", async (req, res) => {
       return {
         party: data.party,
         count: data.voteCount,
-        partyImage:data.partyImage
+        partyImage:data.partyImage,
+        name: data.name,
       };
     });
 
