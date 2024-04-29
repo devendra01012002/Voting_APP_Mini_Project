@@ -60,11 +60,25 @@
     font-size: 0.85rem;
     margin-bottom: 0;
 }
-.main-title{
-    font-weight: 700;
-    font-size: 1.85rem;
-    display: flex;
-    justify-content: space-around;
+.main-title {
 
+    display: flex;
+    align-items: center;
+   text-align: center;
+    margin: 50px 0px;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 5px;
+    background-color: rgb(123, 191, 195);
+}
+.main-title h1{
+    font-size: 1.85rem;
+    font-weight: 700;
+    padding:5px 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-title h1 span{
+    color: #a70529;
 }
 
