@@ -4,7 +4,7 @@ import StartVoting from "../StartVoting/StartVoting";
 import "./Home.css";
 import ElectionPage from "../ElectionsList/ElectionPage";
 import ScrollImageSect from "../ElectionsList/ScrollImageSect";
-import MainFooter from "../partials/MainFooter";
+// import MainFooter from "../partials/MainFooter";
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
       <ElectionPage />
       <PullingPage />
       <ScrollImageSect />
-      <MainFooter />
+      
     </div>
   );
 };

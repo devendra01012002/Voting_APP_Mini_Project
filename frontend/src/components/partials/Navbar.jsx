@@ -1,16 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { SiGnuprivacyguard } from "react-icons/si";
+import {  SiGnuprivacyguard } from "react-icons/si";
 import { CgLogIn } from "react-icons/cg";
 import { MdOutlineLogout } from "react-icons/md";
+// import axios from "axios";
 // import { GiClick } from "react-icons/gi";
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const [isAuthentication, SetAuthentication] = useState(null);
+
+  // const checkAuthenticationreq = async () => {
+  //   try {
+  //     const response = await axios.patch(
+  //       "http://localhost:8080/check-auth",
+  //       { withCredentials: true }
+  //     );
+
+  //     SetAuthentication(response.data.authenticated);
+  //   } catch (error) {
+  //     SetAuthentication(false);
+  //   }
+  // };
+
   // useEffect(() => {
-  //   console.log(localStorage.getItem("mes"));
-  //  setUser(localStorage.getItem("mes"));
+  //   checkAuthenticationreq();
   // },[])
+
+  const UserLogin = () => {
+    SetAuthentication(localStorage.getItem('mes'))
+  }
+
+  useEffect(() => {
+    UserLogin();
+  }, [isAuthentication]);
+  
+  const LogoutUser = () => {
+    
+    localStorage.removeItem('mes');
+    SetAuthentication(null);
+  }
   
   return (
     <React.Fragment>
@@ -49,6 +77,15 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink
                   className="nav-link active "
+                  to="/candidate/AddCandidate"
+                  aria-disabled="true"
+                >
+                  AddCandidate
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active "
                   to="/candidate/result"
                   aria-disabled="true"
                 >
@@ -58,7 +95,7 @@ const Navbar = () => {
             </ul>
             <div className="d-flex">
               <ul className="navbar-nav fw-medium fs-4 me-auto mb-2 mb-lg-0">
-                {!user ? (
+                {!isAuthentication ? (
                   <React.Fragment>
                     <li className="nav-item">
                       <NavLink
@@ -85,9 +122,9 @@ const Navbar = () => {
                 ) : (
                   <li className="nav-item">
                     <NavLink
+                      onClick={LogoutUser}
                       className="nav-link active "
                       aria-current="page"
-          
                     >
                       Logout
                       <MdOutlineLogout />

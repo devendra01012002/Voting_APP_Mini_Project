@@ -21,6 +21,7 @@ router.post("/", jwtAuthMiddleware, async (req, res) => {
   try {
     if (!(await checkAdminRole(req.user.id)))
       return res.status(403).json({ message: "user does not have admin role" });
+    
 
     const data = req.body; // Assuming the request body contains the candidate data
 
@@ -140,6 +141,7 @@ router.get("/result", async (req, res) => {
       return {
         party: data.party,
         count: data.voteCount,
+        partyImage:data.partyImage
       };
     });
 
@@ -154,9 +156,10 @@ router.get("/result", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     // Find all candidates and select only the name and party fields, excluding _id
-    const candidates = await Candidate.find({}, "name party -_id");
-
+    const candidates = await Candidate.find({}, "name party partyImage -_id");
+    
     // Return the list of candidates
+    // console.log(candidates)
     res.status(200).json(candidates);
   } catch (err) {
     console.error(err);

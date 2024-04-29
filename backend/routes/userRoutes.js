@@ -68,7 +68,6 @@ router.post("/login", async (req, res) => {
 
     // Find the user by aadharCardNumber
     const user = await User.findOne({ aadharCardNumber: aadharCardNumber });
-
     // If user does not exist or password does not match, return error
     if (!user || !(await user.comparePassword(password))) {
       return res
@@ -81,7 +80,8 @@ router.post("/login", async (req, res) => {
       id: user.id,
     };
     const token = generateToken(payload);
-
+    req.user = token;
+    res.cookie({'token':token})
     // resturn token as response
     res.json({ token });
   } catch (err) {
@@ -143,6 +143,17 @@ router.post('/logout', async (req, res) => {
       console.error(err);
       res.status(500).json({ error: 'Internal Server Error' });
     }
-  })
+})
+  
+router.patch("/check-auth", (req, res) => {
+  // Check if the user is authenticated
+  console.log("route hit");
+  if (req.isAuthenticated()) {
+    res.status(200).json({ authenticated: true });
+  } else {
+    res.status(401).json({ authenticated: false });
+  }
+
+});
 
 module.exports = router;

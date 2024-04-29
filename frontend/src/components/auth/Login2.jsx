@@ -48,14 +48,14 @@ export default function Login2() {
               aadharCardNumber: aadharCardNumber,
               password: password,
             };
-            console.log(object)
+            // console.log(object)
             const response = await axios.post(
               "http://localhost:8080/user/login",
               object
             );
-            console.log(response.data);
+            // console.log(response.data);
             localStorage.setItem("mes", response.data.token);
-            navigate('/')
+          window.location.href = '/candidate';
         }
         catch (err) {
             console.log(err);

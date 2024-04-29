@@ -1,0 +1,67 @@
+.Candidate_page{
+    background-color: #1679AB;
+    padding: 20px;
+}
+
+.extra_info{
+    text-align: center;
+}
+
+.people_logo{
+    font-size: 5rem;
+}
+
+.text_info{
+    width: 60%;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 0px auto;
+    margin-bottom: 30px;
+}
+
+.candidate_box{
+    width: 400px;
+    
+    text-align: center;
+    margin: 0px auto;
+    background-color: #bbb;
+    padding: 20px;
+    border: 1px solid #fff;
+    box-shadow: 5px -3px 3px #fff;
+}
+
+.candidate_box h2{
+    font-size: 34px;
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    background-color: #1679AB;
+    padding: 10px;
+}
+
+.candidate_field{
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: start;
+}
+.candidate_field input{
+    width: 100%;
+    display: block;
+    opacity: 0.6;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px #bbb;
+    margin-bottom: 20px;
+}
+
+.candidate_box button{
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius:15px ;
+    font-weight: bolder;
+    background-color: #102C57;
+    color: #fff;
+    opacity: 0.8;
+}
