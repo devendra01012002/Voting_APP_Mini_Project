@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './CandidatePage.css'
+// import './CandidatePage.css'
 
 import { NavLink } from "react-router-dom";
 
@@ -72,7 +72,7 @@ const CandidatePage = () => {
                 </div>
                 <div className="poll">
                   {!isAdmin ? (
-                    <NavLink to="/">Polling</NavLink>
+                    <NavLink to="/">Vote</NavLink>
                   ) : (
                     <div>
                       <div className="edit">
