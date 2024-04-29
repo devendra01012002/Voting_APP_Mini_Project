@@ -1,3 +1,15 @@
+.main-card {
+    /* width: 80%; */
+    margin: 20px auto;
+    display: flex;
+    padding: 30px;
+    background-color: #bbb;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
 .d1{
     /* border: 2px solid red; */
     height: 150px;
@@ -55,10 +67,4 @@
     justify-content: space-around;
 
 }
-.main-card{
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
+

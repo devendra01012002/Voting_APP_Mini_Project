@@ -56,9 +56,10 @@ export default function Login2() {
             // console.log(response.data);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("message", response.data.message);
-          console.log(response)
+          
          
-           window.location.href = '/candidate';
+          window.location.href = '/candidate';
+          
         }
         catch (err) {
           console.log(err);
