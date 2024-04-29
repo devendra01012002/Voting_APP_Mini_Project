@@ -10,6 +10,8 @@ function CandidatePage2() {
   const [isAdmin, setisAdmin] = useState(false);
   const [message, setmessage] = useState("");
 
+  // let navigate = useNavigate();
+
     useEffect(() => {
         const fetchCandidates = async () => {
           try {
@@ -22,7 +24,8 @@ function CandidatePage2() {
         };
     
         fetchCandidates();
-        add();
+      add();
+      setisAdmin(localStorage.getItem("role"))
     }, []);
   
   const clickHandler = () => {
@@ -33,6 +36,29 @@ function CandidatePage2() {
   function add() {
     setmessage(localStorage.getItem("message"));
   }
+
+  const HandleClickSubmit = async (id) => {
+    console.log( {id} );
+    try {
+      
+      const response = await axios.delete(
+        `http://localhost:8080/candidate/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      console.log(response);
+     window.location.reload();
+    }
+    catch (err) {
+      console.log(err.message)
+    }
+    
+  }
+
+  
     
   return (
     <>
@@ -57,13 +83,13 @@ function CandidatePage2() {
       </div>
       <div className="main-card1">
         {candidate.map((candidate) => (
-          <div className="d11" key={candidate.id}>
+          <div key={candidate._id} className="d11">
             <section className="Vote-count1">
               Candidate {candidate.count}{" "}
             </section>
             <div className="d21">
               <section className="image1">
-                <img src={candidate.partyImage} alt="" srcset="" />
+                <img src={candidate.partyImage} alt={candidate.partyImage} />
               </section>
               <section className="detail1">
                 <h4 className="name1">Name: {candidate.name}</h4>
@@ -74,14 +100,20 @@ function CandidatePage2() {
                 {!isAdmin ? (
                   <NavLink to="/">Vote</NavLink>
                 ) : (
-                  <div>
+                  <>
                     <div className="edit">
                       <NavLink to="/">Edit</NavLink>
                     </div>
                     <div className="delete">
-                      <button>Delete</button>
+                      <button
+                        onClick={() => {
+                          HandleClickSubmit(candidate._id);
+                        }}
+                      >
+                        Delete
+                      </button>
                     </div>
-                  </div>
+                  </>
                 )}
               </div>
             </div>

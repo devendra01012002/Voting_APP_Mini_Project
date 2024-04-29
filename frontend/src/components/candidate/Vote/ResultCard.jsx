@@ -27,11 +27,10 @@ function ResultCard() {
       }, []);
   return (
     <>
-<<<<<<< HEAD
       <div className="main-title">
         <h1>
-          Adjourned Poll Election to Assembly Constituency: Trends & Results Jan
-          2024
+          Adjourned Poll Election to Assembly Constituency:{" "}
+          <span>Trends & Results Jan 2024</span>
         </h1>
       </div>
       <div className="main-card">
@@ -42,7 +41,7 @@ function ResultCard() {
             </section>
             <div className="d2">
               <section className="image">
-                <img src={candidate.partyImage} alt=""  />
+                <img src={candidate.partyImage} alt="" />
               </section>
               <section className="detail">
                 <h4 className="name">Name: {candidate.name}</h4>
@@ -52,8 +51,7 @@ function ResultCard() {
           </div>
         ))}
       </div>
-=======
-    <div className="main-title">
+      {/* <div className="main-title">
     <h1>
     Adjourned Poll Election to Assembly Constituency: <span>Trends & Results Jan 2024</span>
     </h1>
@@ -69,10 +67,9 @@ function ResultCard() {
                <h4 className="party">Party: {candidate.party}</h4>
            </section>
        </div>
-    </div>
+    </div> 
      ))}
-     </div>
->>>>>>> 8986389dab5612369f768744131d2a93c031d2bf
+     </div> */}
     </>
   );
 }

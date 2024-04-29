@@ -83,7 +83,7 @@ router.post("/login", async (req, res) => {
     req.user = token;
     res.cookie({'token':token})
     // resturn token as response
-    res.json({message:"User login successful!",token:token});
+    res.json({ message: "User login successful!", token: token, candidate: user });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal Server Error" });

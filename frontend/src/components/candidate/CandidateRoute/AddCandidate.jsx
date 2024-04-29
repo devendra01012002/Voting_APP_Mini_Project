@@ -30,7 +30,7 @@ const AddCandidate = () => {
         candidateData,
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("mes")}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           }
         }
       );
