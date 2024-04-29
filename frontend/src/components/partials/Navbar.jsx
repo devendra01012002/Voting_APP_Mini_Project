@@ -27,7 +27,7 @@ const Navbar = () => {
   // },[])
 
   const UserLogin = () => {
-    SetAuthentication(localStorage.getItem('mes'))
+    SetAuthentication(localStorage.getItem('token'))
   }
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Navbar = () => {
   
   const LogoutUser = () => {
     
-    localStorage.removeItem('mes');
+    localStorage.removeItem('token');
     SetAuthentication(null);
   }
   

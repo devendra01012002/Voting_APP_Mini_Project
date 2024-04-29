@@ -9,6 +9,11 @@ import { NavLink } from "react-router-dom";
 const CandidatePage = () => {
   const [candidate, setcandidate] = useState([]);
   const [isAdmin, setisAdmin] = useState(false);
+  const [message, setmessage] = useState("");
+
+  const clickHandler = () => {
+    localStorage.setItem("message", "");
+  };
 
   useEffect(() => {
     const fetchCandidates = async () => {
@@ -22,15 +27,31 @@ const CandidatePage = () => {
     };
 
     fetchCandidates();
-
-    // Cleanup function (optional)
-    return () => {
-      // Perform any cleanup if necessary
-    };
+    add();
   }, []);
+
+  function add() {
+    setmessage(localStorage.getItem("message"));
+  }
 
   return (
     <>
+      <div className=" mt-3 mx-auto">
+        {message && message.length ? (
+          <div className=" alert alert-warning alert-dismissible fade show">
+            <strong>{message}!</strong>
+            <button
+              type="button"
+              onClick={clickHandler}
+              className="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
       <div className="candidate__sec">
         <div className="List_section">
           <h1>Candidates</h1>
