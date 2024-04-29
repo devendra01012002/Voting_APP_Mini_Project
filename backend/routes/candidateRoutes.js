@@ -143,6 +143,7 @@ router.get("/result", async (req, res) => {
         count: data.voteCount,
         partyImage:data.partyImage,
         name: data.name,
+        
       };
     });
 
@@ -157,7 +158,7 @@ router.get("/result", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     // Find all candidates and select only the name and party fields, excluding _id
-    const candidates = await Candidate.find({}, "name party partyImage -_id");
+    const candidates = await Candidate.find({}, "name party partyImage _id ");
     
     // Return the list of candidates
     // console.log(candidates)

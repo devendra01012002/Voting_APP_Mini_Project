@@ -53,12 +53,15 @@ export default function Login2() {
               "http://localhost:8080/user/login",
               object
             );
-            // console.log(response.data);
+          // console.log(response.data);
+          localStorage.setItem("User", response.data.candidate._id);
+          localStorage.setItem("role",response.data.candidate.role);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("message", response.data.message);
-          console.log(response)
+          
          
-           window.location.href = '/candidate';
+          window.location.href = '/';
+          
         }
         catch (err) {
           console.log(err);

@@ -66,29 +66,34 @@
 }
 .poll{
     margin-left:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .delete button{
-    background-color: red;
-    font-size: 24px;
+    background-color: #a70529;
+    font-size: 18px;
     color: #fff;
+    /* color: black; */
+    letter-spacing: 1px;
     border-radius: 10px;
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 .poll a{
     text-decoration: none;
     border: 1px solid black;
-    padding: 5px 10px;
+    padding: 3px 10px;
     font-size: 1;
     color: #fff;
-    border-radius: 15px;
+    border-radius: 8px;
     background-color: #38ba45;
     opacity: 0.8;
  }
  
- .edit{
-     margin: 20px 0px;
- }
  .edit a{
-     background-color: #033474;
-     margin: 20px ;
+     background-color: #92b1db;
+     color: black;
+     margin:0px 20px ;
+     letter-spacing: 1px;
+     font-size: 18px;
  }

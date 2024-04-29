@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {  SiGnuprivacyguard } from "react-icons/si";
 import { CgLogIn } from "react-icons/cg";
 import { MdOutlineLogout } from "react-icons/md";
@@ -8,41 +8,37 @@ import { MdOutlineLogout } from "react-icons/md";
 
 const Navbar = () => {
   const [isAuthentication, SetAuthentication] = useState(null);
-
-  // const checkAuthenticationreq = async () => {
-  //   try {
-  //     const response = await axios.patch(
-  //       "http://localhost:8080/check-auth",
-  //       { withCredentials: true }
-  //     );
-
-  //     SetAuthentication(response.data.authenticated);
-  //   } catch (error) {
-  //     SetAuthentication(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   checkAuthenticationreq();
-  // },[])
+  const [isAdmin, setAdmin] = useState(false);
+  
+  let navigate = useNavigate("");
 
   const UserLogin = () => {
     SetAuthentication(localStorage.getItem('token'))
+    if (localStorage.getItem('role') === 'admin') {
+      setAdmin(true);
+    }
   }
 
   useEffect(() => {
     UserLogin();
-  }, [isAuthentication]);
+  }, []);
   
   const LogoutUser = () => {
     
     localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem("User");
     SetAuthentication(null);
+    setAdmin(false);
+    navigate("/user/login");
   }
   
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg text-light" style={{ backgroundColor: "#a70529" }}>
+      <nav
+        className="navbar navbar-expand-lg text-light"
+        style={{ backgroundColor: "#a70529" }}
+      >
         <div className="container-fluid px-5">
           <NavLink className="navbar-brand fs-3 fw-bolder text-info" to="#">
             E-Chunav
@@ -69,18 +65,25 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
+              {!isAdmin ? (
+                ""
+              ) : (
+                <>
+                  
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link active text-light"
+                      to="/candidate/AddCandidate"
+                      aria-disabled="true"
+                    >
+                      AddCandidate
+                    </NavLink>
+                  </li>
+                </>
+              )}
               <li className="nav-item">
                 <NavLink className="nav-link active text-light" to="/candidate">
                   Candidate
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active text-light"
-                  to="/candidate/AddCandidate"
-                  aria-disabled="true"
-                >
-                  AddCandidate
                 </NavLink>
               </li>
               <li className="nav-item">
