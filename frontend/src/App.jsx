@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-
-import { ToastContainer } from "react-toastify";
 // import SignUpPage from './components/auth/SignUpPage'
 import SignUp2 from "./components/auth/Sign2";
 import LoginPage from "./components/auth/Login2";
@@ -11,6 +9,7 @@ import MainFooter from "./components/partials/MainFooter";
 import AddCandidate from "./components/candidate/CandidateRoute/AddCandidate";
 import CandidatePage2 from "./components/candidate/CandidateRoute/CandidatePage2";
 import ResultCard from "./components/candidate/Vote/ResultCard";
+import UserProfile from "./components/partials/UserProfile";
 
 
 
@@ -39,6 +38,7 @@ const App = () => {
 
 
         </Route>
+        <Route path="/profile" element={<UserProfile/> } />
       </Routes>
       <MainFooter />
     </React.Fragment>

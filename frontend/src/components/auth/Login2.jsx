@@ -1,37 +1,37 @@
 // import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
-import axios from 'axios';
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+// function Copyright(props) {
+//   return (
+//     <Typography
+//       variant="body2"
+//       color="text.secondary"
+//       align="center"
+//       {...props}
+//     >
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -43,36 +43,33 @@ export default function Login2() {
   let AadharCardRef = useRef("");
   let passwordRef = useRef("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-         
-            let aadharCardNumber = AadharCardRef.current.value;
-            let password = passwordRef.current.value;
-            let object = {
-              aadharCardNumber: aadharCardNumber,
-              password: password,
-            };
-            // console.log(object)
-            const response = await axios.post(
-              "http://localhost:8080/user/login",
-              object
-            );
-          // console.log(response.data);
-          localStorage.setItem("User", response.data.candidate._id);
-          localStorage.setItem("role",response.data.candidate.role);
-          localStorage.setItem("token", response.data.token);
-          localStorage.setItem("message", response.data.message);
-          
-         
-          window.location.href = '/';
-          
-        }
-        catch (err) {
-          console.log(err);
-           setmessage(err.message);
-            navigate('/user/login')
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let aadharCardNumber = AadharCardRef.current.value;
+      let password = passwordRef.current.value;
+      let object = {
+        aadharCardNumber: aadharCardNumber,
+        password: password,
+      };
+      // console.log(object)
+      const response = await axios.post(
+        "http://localhost:8080/user/login",
+        object
+      );
+      console.log(response.data);
+      localStorage.setItem("User", response.data.candidate._id);
+      localStorage.setItem("role", response.data.candidate.role);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("message", response.data.message);
+      localStorage.setItem("name", response.data.candidate.name);
+
+      window.location.href = "/";
+    } catch (err) {
+      console.log(err);
+      setmessage(err.message);
+      navigate("/user/login");
+    }
   };
 
   const clickHandler = () => {
@@ -148,7 +145,7 @@ export default function Login2() {
                 id="password"
                 inputRef={passwordRef}
               />
-           
+
               <Button
                 type="submit"
                 fullWidth

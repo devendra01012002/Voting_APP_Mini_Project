@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {  SiGnuprivacyguard } from "react-icons/si";
 import { CgLogIn } from "react-icons/cg";
-import { MdOutlineLogout } from "react-icons/md";
+import { MdPeopleAlt } from "react-icons/md";
 // import axios from "axios";
 // import { GiClick } from "react-icons/gi";
 
 const Navbar = () => {
   const [isAuthentication, SetAuthentication] = useState(null);
   const [isAdmin, setAdmin] = useState(false);
-  
-  const navigate = useNavigate();
 
   const UserLogin = () => {
     SetAuthentication(localStorage.getItem('token'))
@@ -37,7 +35,7 @@ const Navbar = () => {
     <React.Fragment>
       <nav
         className="navbar navbar-expand-lg text-light"
-        style={{ backgroundColor: "rgb(43, 122, 96)" }}
+        style={{ backgroundColor: "rgb(43, 122, 96)"}}
       >
         <div className="container-fluid px-5">
           <NavLink className="navbar-brand fs-3 fw-bolder text-info" to="#">
@@ -69,7 +67,6 @@ const Navbar = () => {
                 ""
               ) : (
                 <>
-                  
                   <li className="nav-item">
                     <NavLink
                       className="nav-link active text-light"
@@ -123,16 +120,35 @@ const Navbar = () => {
                     </li>
                   </React.Fragment>
                 ) : (
-                  <li className="nav-item">
-                    <NavLink
-                      onClick={LogoutUser}
-                      className="nav-link active text-light"
-                      aria-current="page"
-                    >
-                      Logout
-                      <MdOutlineLogout />
-                    </NavLink>
-                  </li>
+                  <>
+                    <li className="nav-item">
+                        <NavLink
+                          onClick={()=>{window.location.href='/profile'}}
+                        className="nav-link active  text-light fs-0.1"
+                        aria-current="page"
+                        style={{
+                          fontSize: "13px",
+                          textAlign: "center",
+                          lineHeight: "10px",
+                          margin: "0px 20px",
+                        }}
+                      >
+                        <div style={{ fontSize: "28px" }}>
+                          <MdPeopleAlt />
+                        </div>
+                        {localStorage.getItem("name")}
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink
+                        onClick={LogoutUser}
+                        className="nav-link active text-light"
+                        aria-current="page"
+                      >
+                        Logout
+                      </NavLink>
+                    </li>
+                  </>
                 )}
               </ul>
             </div>
