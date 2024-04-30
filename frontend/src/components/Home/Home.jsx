@@ -2,6 +2,8 @@
 import PullingPage from "./PullingPage";
 import StartVoting from "../StartVoting/StartVoting";
 import "./Home.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ElectionPage from "../ElectionsList/ElectionPage";
 import ScrollImageSect from "../ElectionsList/ScrollImageSect";
 import { useEffect, useState } from "react";
@@ -25,6 +27,7 @@ const Home = () => {
 
   return (
     <>
+      <ToastContainer/>
       <div className=" mt-3 mx-auto">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">

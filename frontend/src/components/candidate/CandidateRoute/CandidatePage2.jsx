@@ -3,7 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./C2.css";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer,toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function CandidatePage2() {
     const [candidate, setcandidate] = useState([]);
@@ -87,7 +88,7 @@ function CandidatePage2() {
         setmessage(err.response.data.error);
        } 
        else {
-         setmessage(err.response.data.message);
+         toast.error(err.response.data.message);
        }
     }
   }
@@ -95,6 +96,7 @@ function CandidatePage2() {
     
   return (
     <>
+      <ToastContainer/>
       <div className=" mt-3 mx-auto bg-info">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">

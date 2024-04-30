@@ -24,8 +24,7 @@ const AddCandidate = () => {
     };
 
     try {
-      // Send POST request using Axios
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:8080/candidate",
         candidateData,
         {
@@ -36,9 +35,7 @@ const AddCandidate = () => {
       );
 
       // Handle response if needed
-      console.log("Candidate added successfully:", response.data);
-      console.log(candidateData);
-
+      localStorage.setItem("message","Candidate added successfully!");
       // Clear input fields after submission
       setName("");
       setParty("");
