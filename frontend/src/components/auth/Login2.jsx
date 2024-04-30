@@ -102,7 +102,7 @@ export default function Login2() {
           ""
         )}
       </div>
-
+   <div className='login2-main-div'>
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -170,6 +170,7 @@ export default function Login2() {
           </Box>
         </Container>
       </ThemeProvider>
+      </div>
     </>
   );
 }
