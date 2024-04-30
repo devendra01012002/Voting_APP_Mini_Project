@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const { jwtAuthMiddleware, generateToken } = require("../jwt");
 const Candidate = require("../models/candidate");
+const { isLogined } = require("../middleware");
 
 const checkAdminRole = async (userID) => {
   try {
@@ -89,7 +90,7 @@ router.delete("/:candidateID", jwtAuthMiddleware, async (req, res) => {
 });
 
 // let's start voting
-router.get("/vote/:candidateID", jwtAuthMiddleware, async (req, res) => {
+router.get("/vote/:candidateID",jwtAuthMiddleware,  async (req, res) => {
   // no admin can vote
   // user can only vote once
 
@@ -131,7 +132,7 @@ router.get("/vote/:candidateID", jwtAuthMiddleware, async (req, res) => {
 });
 
 // vote count
-router.get("/result", async (req, res) => {
+router.get("/result",  async (req, res) => {
   try {
     // Find all candidates and sort them by voteCount in descending order
     const candidate = await Candidate.find().sort({ voteCount: "desc" });
@@ -156,6 +157,7 @@ router.get("/result", async (req, res) => {
 
 // Get List of all candidates with only name and party fields
 router.get("/", async (req, res) => {
+  
   try {
     // Find all candidates and select only the name and party fields, excluding _id
     const candidates = await Candidate.find({}, "name party partyImage _id ");

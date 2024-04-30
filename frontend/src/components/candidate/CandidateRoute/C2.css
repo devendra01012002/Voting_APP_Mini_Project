@@ -90,6 +90,22 @@
     opacity: 0.8;
  }
  
+ .votinbtn{
+    background-color: #38ba45;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: .5px;
+    padding: 0px 10px;
+    border-radius: 10px;
+   
+ }
+
+ .votinbtn:hover{
+    transform: scale(1.1);
+    
+    transition:ease-out;
+ }
+
  .edit a{
      background-color: #92b1db;
      color: black;

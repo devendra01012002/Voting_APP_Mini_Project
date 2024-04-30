@@ -67,7 +67,7 @@ export default function Sign2() {
       navigate('/user/login');
     } catch (error) {
       console.error('Error:', error); // Handle error
-      navigate('user/signup')
+      navigate('/user/signup')
     }
   };
   const handleInputChange = (event) => {

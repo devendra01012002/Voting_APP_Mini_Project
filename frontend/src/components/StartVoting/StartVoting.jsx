@@ -1,8 +1,12 @@
 // import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./StartVoting.css";
 
 const StartVoting = () => {
-  
+  let navigate = useNavigate();
+  const GetStartHandler = () => {
+    navigate("/user/login");
+  }
   return (
     <div className="voting_section">
       <div className="voting_online">
@@ -10,7 +14,9 @@ const StartVoting = () => {
         <p >
         A vote is like a rifle: its usefulness depends upon the character of the user.
         </p>
-        <button >Get Started </button>
+        <button onClick={() => {
+          GetStartHandler()
+        }} >Get Started </button>
       </div>
     </div>
   );

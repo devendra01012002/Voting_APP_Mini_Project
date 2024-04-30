@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isAuthentication, SetAuthentication] = useState(null);
   const [isAdmin, setAdmin] = useState(false);
   
-  let navigate = useNavigate("");
+  const navigate = useNavigate();
 
   const UserLogin = () => {
     SetAuthentication(localStorage.getItem('token'))
@@ -30,7 +30,7 @@ const Navbar = () => {
     localStorage.removeItem("User");
     SetAuthentication(null);
     setAdmin(false);
-    navigate("/user/login");
+    window.location.href = "/user/login";
   }
   
   return (

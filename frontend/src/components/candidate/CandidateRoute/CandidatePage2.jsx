@@ -10,12 +10,17 @@ function CandidatePage2() {
   const [isAdmin, setisAdmin] = useState(false);
   const [message, setmessage] = useState("");
 
-  // let navigate = useNavigate();
-
     useEffect(() => {
         const fetchCandidates = async () => {
           try {
-            const response = await axios.get("http://localhost:8080/candidate");
+            const response = await axios.get(
+              "http://localhost:8080/candidate",
+              {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              }
+            );
             console.log(response.data);
             setcandidate(response.data);
           } catch (err) {
@@ -25,7 +30,9 @@ function CandidatePage2() {
     
         fetchCandidates();
       add();
-      setisAdmin(localStorage.getItem("role"))
+      if (localStorage.getItem("role") === 'admin') {
+        setisAdmin(localStorage.getItem("role"));
+      }
     }, []);
   
   const clickHandler = () => {
@@ -53,16 +60,36 @@ function CandidatePage2() {
      window.location.reload();
     }
     catch (err) {
-      console.log(err.message)
+      setmessage(err.message)
     }
     
   }
 
+  const AddVotingHandler = async (id) => {
+     try {
+      
+      const response = await axios.get(
+        `http://localhost:8080/candidate/vote/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+       console.log(response);
+       setmessage(response.data.message);
+       
+    }
+     catch (err) {
+       console.log(err)
+       setmessage(err.response.data.error);
+    }
+  }
   
     
   return (
     <>
-      <div className=" mt-3 mx-auto">
+      <div className=" mt-3 mx-auto bg-info">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">
             <strong>{message}!</strong>
@@ -98,7 +125,7 @@ function CandidatePage2() {
 
               <div className="poll">
                 {!isAdmin ? (
-                  <NavLink to="/">Vote</NavLink>
+                  <button className="votinbtn"  onClick={()=>{AddVotingHandler(candidate._id);}} >Vote</button>
                 ) : (
                   <>
                     <div className="edit">
