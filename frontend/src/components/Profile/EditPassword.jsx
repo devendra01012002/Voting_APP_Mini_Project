@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -37,36 +36,28 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function Login2() {
+export default function EditPassword() {
   let navigate = useNavigate();
   const [message, setmessage] = useState("");
-  let AadharCardRef = useRef("");
-  let passwordRef = useRef("");
+  let CurrentPasswordRef = useRef("");
+  let NewPasswordRef = useRef("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-         
-            let aadharCardNumber = AadharCardRef.current.value;
-            let password = passwordRef.current.value;
-            let object = {
-              aadharCardNumber: aadharCardNumber,
-              password: password,
-            };
             // console.log(object)
+            let currentpassword = CurrentPasswordRef.current.value;
+            let newpassword = NewPasswordRef.current.value;
+            let object = {
+                currentpassword: currentpassword,
+                newpassword: newpassword,
+            };
             const response = await axios.post(
-              "http://localhost:8080/user/login",
+              "http://localhost:8080/profile/password",
               object
             );
-          // console.log(response.data);
-          localStorage.setItem("User", response.data.candidate._id);
-          localStorage.setItem("role",response.data.candidate.role);
-          localStorage.setItem("token", response.data.token);
-          localStorage.setItem("message", response.data.message);
-          
-         
-          window.location.href = '/';
-          
+            console.log(response.data);
+          console.log("password edit successfully");
         }
         catch (err) {
           console.log(err);
@@ -74,18 +65,6 @@ export default function Login2() {
             navigate('/user/login')
         }
   };
-
-  const clickHandler = () => {
-    localStorage.setItem("message", "");
-  };
-
-  function add() {
-    setmessage(localStorage.getItem("message"));
-  }
-
-  useEffect(() => {
-    add();
-  }, []);
 
   return (
     <>
@@ -121,7 +100,7 @@ export default function Login2() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Change Password
             </Typography>
             <Box
               component="form"
@@ -133,20 +112,21 @@ export default function Login2() {
                 margin="normal"
                 required
                 fullWidth
-                id="aadharCardNumber"
-                label="Enter Adhar Number"
-                name="aadharCardNumber"
-                inputRef={AadharCardRef}
+                name="password"
+                label="Current Password"
+                type="password"
+                id="currentpassword"
+                inputRef={CurrentPasswordRef}
               />
               <TextField
                 margin="normal"
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="New Password"
                 type="password"
-                id="password"
-                inputRef={passwordRef}
+                id="newpassword"
+                inputRef={NewPasswordRef}
               />
            
               <Button
@@ -155,20 +135,8 @@ export default function Login2() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+               Change Password
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="/user/signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
             </Box>
           </Box>
         </Container>

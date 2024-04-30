@@ -3,6 +3,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import {  SiGnuprivacyguard } from "react-icons/si";
 import { CgLogIn } from "react-icons/cg";
 import { MdOutlineLogout } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+
 // import axios from "axios";
 // import { GiClick } from "react-icons/gi";
 
@@ -31,6 +33,9 @@ const Navbar = () => {
     SetAuthentication(null);
     setAdmin(false);
     window.location.href = "/user/login";
+  }
+  const ProfileClick = ()=>{
+    navigate('user/profile');
   }
   
   return (
@@ -123,6 +128,7 @@ const Navbar = () => {
                     </li>
                   </React.Fragment>
                 ) : (
+                  <>
                   <li className="nav-item">
                     <NavLink
                       onClick={LogoutUser}
@@ -133,6 +139,17 @@ const Navbar = () => {
                       <MdOutlineLogout />
                     </NavLink>
                   </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link active text-light"
+                      aria-current="page"
+                      to="/user/profile"
+                    >
+                      <CgProfile />
+                      Profile
+                    </NavLink>
+                  </li>
+                  </>
                 )}
               </ul>
             </div>

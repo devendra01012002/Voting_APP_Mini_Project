@@ -79,8 +79,6 @@ export default function Sign2() {
 
   return (
     <div className="signup_sect">
-
-
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="50vw" className="inner-main" sx={{width:'50vw'}}>
           <CssBaseline />

@@ -9,6 +9,7 @@ import ScrollImageSect from "../ElectionsList/ScrollImageSect";
 import { useEffect, useState } from "react";
 import Digital from "../partials/Digital";
 import EveryoneCard from "../partials/EveryoneCard";
+import EditPassword from "../Profile/EditPassword";
 // import MainFooter from "../partials/MainFooter";
 
 const Home = () => {
@@ -52,7 +53,7 @@ const Home = () => {
       <ElectionPage />
       <PullingPage />
       <ScrollImageSect />
-
+      {/* <EditPassword/> */}
     </>
   );
 };

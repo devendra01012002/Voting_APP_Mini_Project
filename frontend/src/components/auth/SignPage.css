@@ -15,8 +15,10 @@
     font-weight: bold;
 }
 .login2-main-div{
-    background-color: blue;
-}
-.login2-container-main{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOQHsu5N_-VS2H0lvc_B-m6bfpr0ro8ODBNg&s');
+    background-image: url('https://img.freepik.com/free-vector/blue-curve-frame-template-vector_53876-165851.jpg');
+    margin-top: 0px;;
+    background-repeat: no-repeat;
+    background-image: -o-repeating-linear-gradient();
+    background-position: center;
+    background-size: 100%;
 }
