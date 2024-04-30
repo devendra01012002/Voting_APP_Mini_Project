@@ -15,16 +15,20 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import './SignPage.css';
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         Your Website
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -34,10 +38,10 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function Login2() {
-    let navigate =  useNavigate();
+  let navigate = useNavigate();
   const [message, setmessage] = useState("");
-    let AadharCardRef = useRef("");
-    let passwordRef = useRef("");
+  let AadharCardRef = useRef("");
+  let passwordRef = useRef("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -59,6 +63,8 @@ export default function Login2() {
           localStorage.setItem("role",response.data.candidate.role);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("message", response.data.message);
+          
+         
           window.location.href = '/';
           
         }
@@ -68,22 +74,22 @@ export default function Login2() {
             navigate('/user/login')
         }
   };
-  
+
   const clickHandler = () => {
     localStorage.setItem("message", "");
   };
 
-   function add() {
-     setmessage(localStorage.getItem("message"));
-   }
+  function add() {
+    setmessage(localStorage.getItem("message"));
+  }
 
   useEffect(() => {
     add();
-  },[])
+  }, []);
 
   return (
     <>
-      <div className="mt-3 mx-auto ">
+      <div className=" mt-3 mx-auto">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">
             <strong>{message}!</strong>
@@ -99,6 +105,7 @@ export default function Login2() {
           ""
         )}
       </div>
+
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
