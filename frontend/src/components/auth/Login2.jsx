@@ -12,7 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 // function Copyright(props) {
@@ -40,6 +40,7 @@ const defaultTheme = createTheme();
 export default function Login2() {
   let navigate = useNavigate();
   const [message, setmessage] = useState("");
+  
   let AadharCardRef = useRef("");
   let passwordRef = useRef("");
 
@@ -86,7 +87,7 @@ export default function Login2() {
 
   return (
     <>
-      <div className=" mt-3 mx-auto">
+      <div className=" mt-1 mx-auto">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">
             <strong>{message}!</strong>
@@ -102,7 +103,7 @@ export default function Login2() {
           ""
         )}
       </div>
-   <div className='login2-main-div'>
+   <div className='login2-main-div ' style={{padding:"30px"}}>
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -156,9 +157,9 @@ export default function Login2() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <NavLink to = "/user/password" variant="body2">
                     Forgot password?
-                  </Link>
+                  </NavLink>
                 </Grid>
                 <Grid item>
                   <Link href="/user/signup" variant="body2">

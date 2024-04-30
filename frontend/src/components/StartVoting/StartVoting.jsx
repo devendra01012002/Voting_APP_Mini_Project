@@ -14,7 +14,7 @@ const StartVoting = () => {
 
   return (
     <>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
       <div className="voting_section">
         <div className="voting_online">
           <h1 className="text-info">Online VOTE</h1>

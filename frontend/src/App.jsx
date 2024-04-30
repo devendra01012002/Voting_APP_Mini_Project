@@ -9,11 +9,9 @@ import MainFooter from "./components/partials/MainFooter";
 import AddCandidate from "./components/candidate/CandidateRoute/AddCandidate";
 import CandidatePage2 from "./components/candidate/CandidateRoute/CandidatePage2";
 import ResultCard from "./components/candidate/Vote/ResultCard";
-<<<<<<< HEAD
 import UserProfile from "./components/partials/UserProfile";
-=======
 import ProfilePage from "./components/Profile/ProfilePage";
->>>>>>> 5e1b9a53462b3a0cbf09ef828d7c15a1c194d369
+import EditPassword from "./components/Profile/EditPassword";
 
 
 
@@ -30,6 +28,7 @@ const App = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="logout" element={<LoginPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="password" element={<EditPassword/>} />
         </Route>
         <Route path="/candidate/">
 
@@ -38,7 +37,8 @@ const App = () => {
           <Route path='AddCandidate' element={<AddCandidate/> } />
           <Route path="result" element={<ResultCard/>} />
         </Route>
-        <Route path="/profile" element={<UserProfile/> } />
+
+        <Route path="/profile" element={<UserProfile/>} />
       </Routes>
       <MainFooter />
     </React.Fragment>

@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <>
       <ToastContainer/>
-      <div className=" mt-3 mx-auto">
+      <div className=" mx-auto">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">
             <strong>{message}!</strong>

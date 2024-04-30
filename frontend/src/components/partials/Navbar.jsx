@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {  SiGnuprivacyguard } from "react-icons/si";
 import { CgLogIn } from "react-icons/cg";
-import { MdPeopleAlt } from "react-icons/md";
-import { MdOutlineLogout } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 
 // import axios from "axios";
@@ -33,15 +31,12 @@ const Navbar = () => {
     setAdmin(false);
     window.location.href = "/user/login";
   }
-  const ProfileClick = ()=>{
-    navigate('user/profile');
-  }
   
   return (
     <React.Fragment>
       <nav
-        className="navbar navbar-expand-lg text-light"
-        style={{ backgroundColor: "rgb(43, 122, 96)"}}
+        className="navbar navbar-expand-lg text-light "
+        style={{ backgroundColor: "rgb(43, 122, 96)",marginBottom:"0px"}}
       >
         <div className="container-fluid px-5">
           <NavLink className="navbar-brand fs-3 fw-bolder text-info" to="#">
@@ -127,25 +122,7 @@ const Navbar = () => {
                   </React.Fragment>
                 ) : (
                   <>
-<<<<<<< HEAD
-                    <li className="nav-item">
-                        <NavLink
-                          onClick={()=>{window.location.href='/profile'}}
-                        className="nav-link active  text-light fs-0.1"
-                        aria-current="page"
-                        style={{
-                          fontSize: "13px",
-                          textAlign: "center",
-                          lineHeight: "10px",
-                          margin: "0px 20px",
-                        }}
-                      >
-                        <div style={{ fontSize: "28px" }}>
-                          <MdPeopleAlt />
-                        </div>
-                        {localStorage.getItem("name")}
-                      </NavLink>
-                    </li>
+                    
                     <li className="nav-item">
                       <NavLink
                         onClick={LogoutUser}
@@ -155,17 +132,7 @@ const Navbar = () => {
                         Logout
                       </NavLink>
                     </li>
-=======
-                  <li className="nav-item">
-                    <NavLink
-                      onClick={LogoutUser}
-                      className="nav-link active text-light"
-                      aria-current="page"
-                    >
-                      Logout
-                      <MdOutlineLogout />
-                    </NavLink>
-                  </li>
+                  
                   <li className="nav-item">
                     <NavLink
                       className="nav-link active text-light"
@@ -176,7 +143,6 @@ const Navbar = () => {
                       Profile
                     </NavLink>
                   </li>
->>>>>>> 5e1b9a53462b3a0cbf09ef828d7c15a1c194d369
                   </>
                 )}
               </ul>
