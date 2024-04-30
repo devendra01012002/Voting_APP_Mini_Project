@@ -1,22 +1,20 @@
 // import * as React from 'react';
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 function Copyright(props) {
   return (
     <Typography
@@ -45,33 +43,36 @@ export default function Login2() {
   let AadharCardRef = useRef("");
   let passwordRef = useRef("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      let aadharCardNumber = AadharCardRef.current.value;
-      let password = passwordRef.current.value;
-      let object = {
-        aadharCardNumber: aadharCardNumber,
-        password: password,
-      };
-      // console.log(object)
-      const response = await axios.post(
-        "http://localhost:8080/user/login",
-        object
-      );
-      // console.log(response.data);
-      localStorage.setItem("User", response.data.candidate._id);
-      localStorage.setItem("role", response.data.candidate.role);
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("message", response.data.message);
-      toast.success("login successful!");
-      window.location.href = "/";
-    } catch (err) {
-      console.log(err);
-      toast.error(err.message);
-      setmessage(err.message);
-      navigate("/user/login");
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+         
+            let aadharCardNumber = AadharCardRef.current.value;
+            let password = passwordRef.current.value;
+            let object = {
+              aadharCardNumber: aadharCardNumber,
+              password: password,
+            };
+            // console.log(object)
+            const response = await axios.post(
+              "http://localhost:8080/user/login",
+              object
+            );
+          // console.log(response.data);
+          localStorage.setItem("User", response.data.candidate._id);
+          localStorage.setItem("role",response.data.candidate.role);
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("message", response.data.message);
+          
+         
+          window.location.href = '/';
+          
+        }
+        catch (err) {
+          console.log(err);
+           setmessage(err.message);
+            navigate('/user/login')
+        }
   };
 
   const clickHandler = () => {
@@ -88,7 +89,6 @@ export default function Login2() {
 
   return (
     <>
-      <ToastContainer/>
       <div className=" mt-3 mx-auto">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">
@@ -148,10 +148,7 @@ export default function Login2() {
                 id="password"
                 inputRef={passwordRef}
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+           
               <Button
                 type="submit"
                 fullWidth
@@ -174,7 +171,6 @@ export default function Login2() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
     </>

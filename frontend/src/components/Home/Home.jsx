@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import ElectionPage from "../ElectionsList/ElectionPage";
 import ScrollImageSect from "../ElectionsList/ScrollImageSect";
 import { useEffect, useState } from "react";
+import Digital from "../partials/Digital";
+import EveryoneCard from "../partials/EveryoneCard";
 // import MainFooter from "../partials/MainFooter";
 
 const Home = () => {
@@ -45,9 +47,12 @@ const Home = () => {
         )}
       </div>
       <StartVoting />
+      <EveryoneCard/>
+      <Digital/>
       <ElectionPage />
       <PullingPage />
       <ScrollImageSect />
+
     </>
   );
 };
