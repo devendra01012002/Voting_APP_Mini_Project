@@ -1,7 +1,7 @@
 // import React from 'react'
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./C2.css";
 import { ToastContainer } from "react-toastify";
 
@@ -9,31 +9,31 @@ function CandidatePage2() {
     const [candidate, setcandidate] = useState([]);
   const [isAdmin, setisAdmin] = useState(false);
   const [message, setmessage] = useState("");
-
+  const navigate = useNavigate();
     useEffect(() => {
-        const fetchCandidates = async () => {
-          try {
-            const response = await axios.get(
-              "http://localhost:8080/candidate",
-              {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              }
-            );
-            console.log(response.data);
-            setcandidate(response.data);
-          } catch (err) {
-            console.log(err);
-          }
-        };
-    
-        fetchCandidates();
+      const fetchCandidates = async () => {
+        try {
+          const response = await axios.get("http://localhost:8080/candidate", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+          console.log(response.data);
+          setcandidate(response.data);
+        } catch (err) {
+          // console.log(err.response.data.error);
+          localStorage.setItem("message", err.response.data.error);
+          navigate("/user/login");
+        }
+      };
+
+      fetchCandidates();
       add();
-      if (localStorage.getItem("role") === 'admin') {
+      if (localStorage.getItem("role") === "admin") {
         setisAdmin(localStorage.getItem("role"));
       }
-    }, []);
+      // eslint-disable-next-line
+    },[]);
   
   const clickHandler = () => {
     localStorage.setItem("message", "");
@@ -61,6 +61,7 @@ function CandidatePage2() {
     }
     catch (err) {
       setmessage(err.message)
+      
     }
     
   }
@@ -82,7 +83,12 @@ function CandidatePage2() {
     }
      catch (err) {
        console.log(err)
-       setmessage(err.response.data.error);
+       if (err.response.data.error) {
+        setmessage(err.response.data.error);
+       } 
+       else {
+         setmessage(err.response.data.message);
+       }
     }
   }
   
@@ -119,8 +125,8 @@ function CandidatePage2() {
                 <img src={candidate.partyImage} alt={candidate.partyImage} />
               </section>
               <section className="detail1">
-                <h4 className="name1">Name: {candidate.name}</h4>
-                <h4 className="party1">Party: {candidate.party}</h4>
+                <h4 className="name1">{candidate.name}</h4>
+                <h4 className="party1">{candidate.party}</h4>
               </section>
 
               <div className="poll">

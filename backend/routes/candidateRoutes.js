@@ -132,7 +132,7 @@ router.get("/vote/:candidateID",jwtAuthMiddleware,  async (req, res) => {
 });
 
 // vote count
-router.get("/result",  async (req, res) => {
+router.get("/result",jwtAuthMiddleware , async (req, res) => {
   try {
     // Find all candidates and sort them by voteCount in descending order
     const candidate = await Candidate.find().sort({ voteCount: "desc" });
@@ -156,7 +156,7 @@ router.get("/result",  async (req, res) => {
 });
 
 // Get List of all candidates with only name and party fields
-router.get("/", async (req, res) => {
+router.get("/",jwtAuthMiddleware, async (req, res) => {
   
   try {
     // Find all candidates and select only the name and party fields, excluding _id
@@ -170,5 +170,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
 
 module.exports = router;

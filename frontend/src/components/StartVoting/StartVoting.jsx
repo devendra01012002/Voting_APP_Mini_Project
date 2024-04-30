@@ -5,7 +5,7 @@ import "./StartVoting.css";
 const StartVoting = () => {
   let navigate = useNavigate();
   const GetStartHandler = () => {
-    navigate("/user/login");
+    navigate("/candidate");
   }
   return (
     <div className="voting_section">

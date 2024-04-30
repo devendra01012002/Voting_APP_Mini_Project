@@ -42,12 +42,13 @@
 }
 .d21 .detail1 .name1{
     color: #004274;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
     font-weight: 600;
 }
 .d21 .detail1 .party1{
     color: #0a8bfd;
-    font-size: 0.85rem;
+    font-size: 1rem;
     margin-bottom: 0;
 }
 .main-title1{
