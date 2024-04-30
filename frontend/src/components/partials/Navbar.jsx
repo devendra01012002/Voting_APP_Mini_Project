@@ -37,11 +37,11 @@ const Navbar = () => {
     <React.Fragment>
       <nav
         className="navbar navbar-expand-lg text-light"
-        style={{ backgroundColor: "#a70529" }}
+        style={{ backgroundColor: "rgb(43, 122, 96)" }}
       >
         <div className="container-fluid px-5">
           <NavLink className="navbar-brand fs-3 fw-bolder text-info" to="#">
-            E-Chunav
+            E-Vote
           </NavLink>
           <button
             className="navbar-toggler"

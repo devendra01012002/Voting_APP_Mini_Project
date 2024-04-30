@@ -1,0 +1,33 @@
+.everyone-main{
+    background-color: rgb(215, 223, 229);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+}
+.everyone-heading{
+    color: rgb(43, 122, 96);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.everyone-heading h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.everyone-l1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    text-align: start;
+    padding: 40px;
+}
+.everyone-l2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    text-align: start;
+    padding: 40px;
+}

@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import './SignPage.css';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -58,8 +59,6 @@ export default function Login2() {
           localStorage.setItem("role",response.data.candidate.role);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("message", response.data.message);
-          
-         
           window.location.href = '/';
           
         }
@@ -84,7 +83,7 @@ export default function Login2() {
 
   return (
     <>
-      <div className=" mt-3 mx-auto">
+      <div className="mt-3 mx-auto ">
         {message && message.length ? (
           <div className=" alert alert-warning alert-dismissible fade show">
             <strong>{message}!</strong>
@@ -142,10 +141,7 @@ export default function Login2() {
                 id="password"
                 inputRef={passwordRef}
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+           
               <Button
                 type="submit"
                 fullWidth
@@ -168,7 +164,6 @@ export default function Login2() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
     </>

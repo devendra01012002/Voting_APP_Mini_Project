@@ -1,0 +1,24 @@
+.digital-div{
+    background-color: rgb(144, 241, 209);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+    padding: 50px;
+    text-align: center;
+    gap: 80px;
+}
+.digital-text{
+    font-size: 3rem;
+    font-weight:700;
+    color: rgb(43, 122, 96);
+}
+.digital-btn{
+    background-color:#006d77;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+
+    border-radius: 4px;
+}
