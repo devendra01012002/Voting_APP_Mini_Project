@@ -126,4 +126,4 @@ function ProfilePage() {
     );
 }
 
-export default ProfilePage;
+export{ ProfilePage};
